@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Show docker file header
+cat /tmp/prompt_header.txt
+
+
+# Add some custom shortcuts and settings here:
