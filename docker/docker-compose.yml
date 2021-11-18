@@ -1,0 +1,30 @@
+version: '3'
+services:
+  python-learning:
+    # build settings
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile
+    # Any build image will be tagged such as:
+    image: datapero.python-learning:master
+
+    # Load any environnement variables into the Docker container env.
+    env_file:
+      - .env
+
+    # Mount local source folder into the docker
+    volumes:
+      - ../:/source/
+
+    # Open some ports for easy access
+    ports:
+      - 2345:2345 # GDB server
+      - 2346:5678 # python debugger
+      - 2347:2347 # jupyter notebook
+
+    # Do not limit sytem usage and access, required for debugging
+    # WARNING: this might be a security issue, do not run in PROD
+    security_opt:
+      - seccomp:unconfined
+
+    command: bash -c "/source/notebooks/start_notebooks.sh"

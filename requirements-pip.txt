@@ -1,0 +1,22 @@
+# List of packages that are not available threw CONDA
+# and that will be installed with PIP
+
+
+## Some usefull modules
+# Command line tool
+begins==0.9
+
+# Progress bar
+tqdm==4.62.3
+
+# Debugging
+ptvsd==4.3.2
+
+# For testing
+pytest==6.1.0
+nbmake==0.10
+
+# For Jupyter
+ipympl
+matplotlib
+imageio==2.11.0 # for scipy image manipulation
